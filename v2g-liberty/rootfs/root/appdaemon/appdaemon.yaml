@@ -1,12 +1,18 @@
 ---
+secrets: /homeassistant/secrets.yaml
+
 appdaemon:
-  latitude: 52.379189
-  longitude: 4.899431
-  elevation: 2
-  time_zone: Europe/Amsterdam
+  latitude: !secret ha_latitude
+  longitude: !secret ha_longitude
+  elevation: !secret ha_elevation
+  time_zone: !secret ha_time_zone
+  production_mode: True
+  exclude_dirs:
+    - app_config
   plugins:
     HASS:
       type: hass
+
 http:
   url: http://127.0.0.1:5050
 admin:
