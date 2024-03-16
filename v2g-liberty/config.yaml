@@ -25,13 +25,10 @@ map:
   - ssl
 options:
   system_packages: []
-  python_packages: []
   init_commands: []
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   system_packages:
-    - str
-  python_packages:
     - str
   init_commands:
     - str

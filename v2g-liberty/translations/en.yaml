@@ -9,11 +9,6 @@ configuration:
     description: >-
       Allows you to specificy a list of additional Alpine Linux packages to be
       installed before AppDaemon starts.
-  python_packages:
-    name: Python packages
-    description: >-
-      Allows you to specificy a list of additional Python packages to be
-      installed before AppDaemon starts.
   init_commands:
     name: Init commands
     description: >-
