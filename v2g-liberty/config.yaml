@@ -1,10 +1,10 @@
 ---
-name: AppDaemon
+name: V2G Liberty
 version: dev
-slug: appdaemon
-description: Python Apps and Dashboard using AppDaemon 4.x for Home Assistant
-url: https://github.com/hassio-addons/addon-appdaemon
-codenotary: codenotary@frenck.dev
+slug: v2g-liberty
+description: Optimised vehicle-to-grid charging of your EV
+url: https://github.com/rhpijnacker/addon-v2g-liberty
+#codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:5050]
 arch:
   - aarch64
