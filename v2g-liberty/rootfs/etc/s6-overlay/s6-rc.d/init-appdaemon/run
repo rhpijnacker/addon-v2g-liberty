@@ -20,6 +20,12 @@ if ! bashio::fs.file_exists '/config/appdaemon.yaml'; then
         || bashio::exit.nok 'Failed to create initial AppDaemon configuration'
 fi
 
+if ! bashio::fs.file_exists '/homeassistant/packages/v2g-liberty'; then
+    mkdir -p /homeassistant/packages/v2g-liberty
+fi
+
+cp -R /config/apps/v2g-liberty/package/* /homeassistant/packages/v2g-liberty
+
 # Install user configured/requested packages
 if bashio::config.has_value 'system_packages'; then
     apk update \
