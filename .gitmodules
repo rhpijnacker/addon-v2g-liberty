@@ -1,3 +1,3 @@
 [submodule "v2g-liberty/rootfs/root/appdaemon/apps/v2g-liberty"]
-	path = v2g-liberty/rootfs/root/appdaemon/apps/v2g-liberty
+	path = rootfs/root/appdaemon/apps/v2g-liberty
 	url = https://github.com/SeitaBV/v2g-liberty
