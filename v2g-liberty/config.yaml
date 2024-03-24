@@ -5,7 +5,6 @@ slug: v2g-liberty
 description: Optimised vehicle-to-grid charging of your EV
 url: https://github.com/rhpijnacker/addon-v2g-liberty
 #codenotary: codenotary@frenck.dev
-webui: http://[HOST]:[PORT:5050]
 arch:
   - aarch64
   - amd64
@@ -13,22 +12,9 @@ arch:
 init: false
 homeassistant_api: true
 uart: true
-ports:
-  5050/tcp: 5050
-ports_description:
-  5050/tcp: AppDaemon
 map:
   - addon_config:rw
   - homeassistant_config:rw
   - media:rw
   - share:rw
   - ssl
-options:
-  system_packages: []
-  init_commands: []
-schema:
-  log_level: list(trace|debug|info|notice|warning|error|fatal)?
-  system_packages:
-    - str
-  init_commands:
-    - str
