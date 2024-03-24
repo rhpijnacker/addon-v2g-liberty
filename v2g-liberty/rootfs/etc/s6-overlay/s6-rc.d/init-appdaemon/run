@@ -1,18 +1,9 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: AppDaemon
-# Configures AppDaemon
+# Home Assistant Community Add-on: V2G Liberty
+# Configures V2G Liberty
 # ==============================================================================
-
-# Migrate add-on data from the Home Assistant config folder,
-# to the add-on configuration folder.
-if ! bashio::fs.file_exists '/config/appdaemon.yaml' \
-    && bashio::fs.file_exists '/homeassistant/appdaemon/appdaemon.yaml'; then
-    shopt -s dotglob
-    mv /homeassistant/appdaemon/* /config/ \
-        || bashio::exit.nok "Failed to migrate AppDaemon configuration"
-fi
 
 # Creates initial AppDaemon configuration in case it is non-existing
 if ! bashio::fs.file_exists '/config/appdaemon.yaml'; then
@@ -20,8 +11,14 @@ if ! bashio::fs.file_exists '/config/appdaemon.yaml'; then
         || bashio::exit.nok 'Failed to create initial AppDaemon configuration'
 fi
 
+if ! bashio::fs.file_exists '/config/apps/v2g-liberty'; then
+    mkdir -p /config/apps/v2g-liberty
+fi
+cp /root/v2g-liberty/*.{py,yaml} /config/apps/v2g-liberty \
+    || bashio::exit.nok 'Failed to copy V2G-Liberty app'
+
 if ! bashio::fs.file_exists '/homeassistant/packages/v2g-liberty'; then
     mkdir -p /homeassistant/packages/v2g-liberty
 fi
-
-cp -R /config/apps/v2g-liberty/package/* /homeassistant/packages/v2g-liberty
+cp /root/v2g-liberty/package/* /homeassistant/packages/v2g-liberty \
+    || bashio::exit.nok 'Failed to copy V2G-Liberty package'
