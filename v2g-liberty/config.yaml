@@ -21,6 +21,10 @@ map:
 options:
   wallbox_host: null
   wallbox_port: 502
+  admin_mobile_name: null
+  admin_mobile_platform: null
 schema:
   wallbox_host: str
   wallbox_port: int?
+  admin_mobile_name: str
+  admin_mobile_platform: list(Android|iOS)

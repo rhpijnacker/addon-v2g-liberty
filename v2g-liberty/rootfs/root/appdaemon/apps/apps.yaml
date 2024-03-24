@@ -37,9 +37,6 @@ v2g_liberty:
     - flexmeasures-client
     - wallbox-client
 
-  admin_mobile_name: !secret admin_mobile_name
-  admin_mobile_platform: !secret admin_mobile_platform
-
   car_average_wh_per_km: !secret car_average_wh_per_km
 
   fm_car_reservation_calendar: calendar.car_reservation
