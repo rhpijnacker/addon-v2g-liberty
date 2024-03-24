@@ -21,10 +21,14 @@ map:
 options:
   wallbox_host: null
   wallbox_port: 502
+  fm_user_email: null
+  fm_user_password: null
   admin_mobile_name: null
   admin_mobile_platform: null
 schema:
   wallbox_host: str
   wallbox_port: int?
+  fm_user_email: str?
+  fm_user_password: str?
   admin_mobile_name: str
   admin_mobile_platform: list(Android|iOS)
