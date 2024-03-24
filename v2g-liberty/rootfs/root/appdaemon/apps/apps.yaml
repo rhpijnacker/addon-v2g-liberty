@@ -45,9 +45,6 @@ v2g_liberty:
   fm_car_reservation_calendar: calendar.car_reservation
   wallbox_modbus_registers: !include /config/apps/v2g-liberty/wallbox_modbus_registers.yaml
 
-  wallbox_host: !secret wallbox_host
-  wallbox_port: !secret wallbox_port
-
   # The Wallbox Quasar needs processing time after a setting is done
   # This is a waiting time between the actions in milliseconds
   wait_between_charger_write_actions: 5000
@@ -105,6 +102,4 @@ set_fm_data:
   fm_base_entity_address_availability: !secret fm_base_entity_address_availability
   fm_base_entity_address_soc: !secret fm_base_entity_address_soc
 
-  wallbox_host: !secret wallbox_host
-  wallbox_port: !secret wallbox_port
   wallbox_modbus_registers: !include /config/apps/v2g-liberty/wallbox_modbus_registers.yaml

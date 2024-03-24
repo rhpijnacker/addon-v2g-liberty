@@ -18,3 +18,9 @@ map:
   - media:rw
   - share:rw
   - ssl
+options:
+  wallbox_host: null
+  wallbox_port: 502
+schema:
+  wallbox_host: str
+  wallbox_port: int?
