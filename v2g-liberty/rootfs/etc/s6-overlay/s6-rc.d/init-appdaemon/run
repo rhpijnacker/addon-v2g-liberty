@@ -11,14 +11,12 @@ if ! bashio::fs.file_exists '/config/appdaemon.yaml'; then
         || bashio::exit.nok 'Failed to create initial AppDaemon configuration'
 fi
 
-if ! bashio::fs.file_exists '/config/apps/v2g-liberty'; then
-    mkdir -p /config/apps/v2g-liberty
-fi
-cp /root/v2g-liberty/*.{py,yaml} /config/apps/v2g-liberty \
+mkdir -p /config/logs
+cp -Rv /root/v2g-liberty/appdaemon/* /config \
     || bashio::exit.nok 'Failed to copy V2G-Liberty app'
 
-if ! bashio::fs.file_exists '/homeassistant/packages/v2g-liberty'; then
-    mkdir -p /homeassistant/packages/v2g-liberty
+if ! bashio::fs.file_exists '/homeassistant/packages/v2g_liberty'; then
+    mkdir -p /homeassistant/packages/v2g_liberty
 fi
-cp /root/v2g-liberty/package/* /homeassistant/packages/v2g-liberty \
+cp -Rv /root/v2g-liberty/homeassistant/packages/v2g_liberty/* /homeassistant/packages/v2g_liberty \
     || bashio::exit.nok 'Failed to copy V2G-Liberty package'

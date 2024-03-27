@@ -1,0 +1,4 @@
+[submodule "v2g-liberty/rootfs/root/v2g-liberty"]
+	path = v2g-liberty/rootfs/root/v2g-liberty
+	url = https://github.com/V2G-liberty/HA-manual-install
+	branch = main
