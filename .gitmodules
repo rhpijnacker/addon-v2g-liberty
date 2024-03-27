@@ -1,4 +1,0 @@
-[submodule "v2g-liberty/rootfs/root/v2g-liberty"]
-	path = v2g-liberty/rootfs/root/v2g-liberty
-	url = https://github.com/rhpijnacker/v2g-liberty
-	branch = main
